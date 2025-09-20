@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>String Showcase: My Basic Info</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #d786e0;
+    }
+    h2 {
+      color: #ffffff;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input {
+      width: 300px;
+      padding: 6px;
+      margin-top: 5px;
+      border: 1px solid #7ad9d1;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 15px;
+      background-color: #66c1ef;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e3e5ca;
+    }
+    #output {
+      margin-top: 25px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      background: white;
+      border-radius: 8px;
+      max-width: 400px;
+      box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
+    }
+    .title {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #444;
+    }
+    .notes {
+      margin-top: 10px;
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h2>My Basic Info</h2>
+
+  <label for="name">Name:</label>
+  <input type="text" id="name">
+
+  <label for="age">Age:</label>
+  <input type="text" id="age">
+
+  <label for="id">ID:</label>
+  <input type="text" id="id">
+
+  <label for="school">School:</label>
+  <input type="text" id="school">
+
+  <button onclick="generateMessage()">Generate Message</button>
+
+  <div id="output"></div>
+
+  <script>
+    function generateMessage() {
+      let name = document.getElementById("name").value;
+      let age = document.getElementById("age").value;
+      let id = document.getElementById("id").value;
+      let school = document.getElementById("school").value;
+
+      let message = `
+        <div class="title">📘 Student Profile</div>
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Age:</b> ${age}</p>
+        <p><b>ID:</b> ${id}</p>
+        <p><b>School:</b> ${school}</p>
+        <div class="notes">
+          <b>Notes:</b><br>
+          - ${name} is currently ${age} years old and studies at ${school}.<br>
+ 
+        </div>
+      `;
+
+      document.getElementById("output").innerHTML = message;
+    }
+  </script>
+</body>
+</html>
